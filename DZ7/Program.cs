@@ -15,21 +15,18 @@ namespace DZ7
 
             while (closeWhile == false)
             {
-                int znachenie = 0;
-
-                Console.WriteLine("для значения " + a);
+                Console.WriteLine($"для значения {a}");
                 Console.ForegroundColor = ConsoleColor.Red;
                 var sw = Stopwatch.StartNew();
                 Fibanachi(a);
                 sw.Stop();
-                Console.WriteLine("время = " + sw.ElapsedMilliseconds + " тики = " + sw.ElapsedTicks);
-
+                Console.WriteLine($"время = { sw.ElapsedMilliseconds} тики = {sw.ElapsedTicks}");
                 Console.ForegroundColor = ConsoleColor.Green;
                 sw.Restart();
                 var v = FibonachiRecurs(a);
                 sw.Stop();
                 Console.WriteLine("Рекурсия Фибоначчи = " + v);
-                Console.WriteLine("время = " + sw.ElapsedMilliseconds + " тики = " + sw.ElapsedTicks);
+                Console.WriteLine($"время = {sw.ElapsedMilliseconds} тики = {sw.ElapsedTicks}");
                 Console.ResetColor();
                 Console.WriteLine();
 
@@ -37,15 +34,15 @@ namespace DZ7
                 { 
                     case 5:
                         a = toDo;
-                        toDo = toDo * 2;
+                        toDo *= 2;
                         break;
                     case 10:
                         a = toDo;
-                        toDo = toDo * 2;
+                        toDo *= 2;
                         break;
                     case 20:
                         a = toDo;
-                        toDo = toDo * 2;
+                        toDo *= 2;
                         break;
                     default: 
                         closeWhile = true; 
@@ -64,7 +61,7 @@ namespace DZ7
                 znachenie1 = znachenie2;
                 znachenie2 = znachenie;
             }
-            Console.WriteLine("Цикл Фибоначчи = " + znachenie);
+            Console.WriteLine($"Цикл Фибоначчи = {znachenie}");
         }
 
         static int FibonachiRecurs(int a)
